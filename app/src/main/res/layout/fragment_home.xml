@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+<RelativeLayout
+    android:id="@+id/homefrg"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/slidecard"
+        app:cardCornerRadius="6dp"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.glide.slider.library.SliderLayout
+
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profilecard"
+        android:layout_below="@+id/slidecard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <LinearLayout
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+<LinearLayout
+    android:padding="10dp"
+    android:layout_weight="0.34"
+    android:weightSum="1"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:src="@drawable/boyprofile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+    </ImageView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView
+        android:text="Sunita chuvan"
+        android:id="@+id/nameof"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+
+    <TextView
+        android:text="Sunita chuvan"
+        android:id="@+id/numberof"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></TextView>
+    </LinearLayout>
+</LinearLayout>
+
+ <LinearLayout
+
+     android:layout_weight="0.70"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+<Button
+    android:layout_marginTop="5dp"
+    android:textColor="@android:color/white"
+    android:background="@color/design_default_color_primary"
+    android:text="Home"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+</Button>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/li1"
+        android:padding="15dp"
+        android:layout_below="@id/profilecard"
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/addnewjb"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <RelativeLayout
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/sm1"
+                    android:src="@drawable/smalladdicon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"></ImageView>
+
+                <TextView
+                    android:textAlignment="center"
+                    android:text="Create Job"
+                    android:layout_below="@id/sm1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </TextView>
+            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/sm2"
+                        android:src="@drawable/smalladdicon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></ImageView>
+
+                    <TextView
+                        android:textAlignment="center"
+                        android:text="Service Status"
+                        android:layout_below="@id/sm2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/sm4"
+                        android:src="@drawable/smalladdicon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></ImageView>
+
+                    <TextView
+                        android:textAlignment="center"
+                        android:text="Collect Unit"
+                        android:layout_below="@id/sm4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/li3"
+        android:padding="15dp"
+        android:layout_below="@id/li1"
+        android:weightSum="3"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/sm5"
+                        android:src="@drawable/smalladdicon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></ImageView>
+
+                    <TextView
+                        android:textAlignment="center"
+                        android:text="Service Approval"
+                        android:layout_below="@id/sm5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:visibility="invisible"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/sm3"
+                        android:src="@drawable/smalladdicon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></ImageView>
+
+                    <TextView
+                        android:text="Create Order"
+                        android:layout_below="@id/sm3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:visibility="invisible"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/sm6"
+                        android:src="@drawable/smalladdicon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></ImageView>
+
+                    <TextView
+                        android:text="Create Order"
+                        android:layout_below="@id/sm6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+
+
+<!--    <LinearLayout-->
+<!--        vi-->
+<!--        android:padding="15dp"-->
+<!--        android:layout_below="@id/li3"-->
+<!--        android:weightSum="3"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_margin="4dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+<!--                <RelativeLayout-->
+<!--                    android:padding="15dp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+<!--                    <ImageView-->
+<!--                        android:id="@+id/sm7"-->
+<!--                        android:src="@drawable/smalladdicon"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"></ImageView>-->
+
+<!--                    <TextView-->
+<!--                        android:text="Create Order"-->
+<!--                        android:layout_below="@id/sm7"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                    </TextView>-->
+<!--                </RelativeLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:visibility="invisible"-->
+<!--            android:layout_margin="4dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+<!--                <RelativeLayout-->
+<!--                    android:padding="15dp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+<!--                    <ImageView-->
+<!--                        android:id="@+id/sm8"-->
+<!--                        android:src="@drawable/smalladdicon"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"></ImageView>-->
+
+<!--                    <TextView-->
+<!--                        android:text="Create Order"-->
+<!--                        android:layout_below="@id/sm8"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                    </TextView>-->
+<!--                </RelativeLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:visibility="invisible"-->
+<!--            android:layout_margin="4dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+<!--            <androidx.cardview.widget.CardView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent">-->
+<!--                <RelativeLayout-->
+<!--                    android:padding="15dp"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
+<!--                    <ImageView-->
+<!--                        android:id="@+id/sm9"-->
+<!--                        android:src="@drawable/smalladdicon"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"></ImageView>-->
+
+<!--                    <TextView-->
+<!--                        android:text="Create Order"-->
+<!--                        android:layout_below="@id/sm9"-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                    </TextView>-->
+<!--                </RelativeLayout>-->
+<!--            </androidx.cardview.widget.CardView>-->
+<!--        </androidx.cardview.widget.CardView>-->
+
+<!--    </LinearLayout>-->
+</RelativeLayout>
+</ScrollView>
+    <!--    <LinearLayout-->
+    <!--        android:layout_below="@+id/slidecard"-->
+    <!--        android:weightSum="1"        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_weight="0.50"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent">-->
+    <!--            <androidx.appcompat.widget.LinearLayoutCompat-->
+    <!--                android:orientation="vertical"-->
+    <!--                android:padding="10dp"-->
+    <!--                android:weightSum="1"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content">-->
+    <!--                <RelativeLayout-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="120dp">-->
+
+    <!--                <Button-->
+    <!--                    android:layout_alignBottom="@+id/jobimg"-->
+    <!--                    android:id="@+id/addnewjb"-->
+    <!--                    android:padding="10dp"-->
+    <!--                    android:background="@android:color/holo_blue_bright"-->
+    <!--                    android:textColor="@android:color/white"-->
+    <!--                    android:text="Add New Job"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content">-->
+
+    <!--                </Button>-->
+
+    <!--                    <ImageView-->
+    <!--                        android:id="@+id/jobimg"-->
+    <!--                        android:background="@drawable/imagenewjob"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="150dp"></ImageView>-->
+    <!--                </RelativeLayout>-->
+    <!--                <RelativeLayout-->
+    <!--                    android:layout_marginTop="10dp"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="120dp">-->
+
+    <!--                <Button-->
+    <!--                    android:layout_alignParentBottom="true"-->
+    <!--                    android:id="@+id/collbtn"-->
+    <!--                    android:layout_marginTop="10dp"-->
+    <!--                    android:padding="10dp"-->
+    <!--                    android:background="@android:color/holo_blue_bright"-->
+    <!--                    android:textColor="@android:color/white"-->
+    <!--                    android:text="Collect Unit"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content">-->
+
+    <!--                </Button>-->
+    <!--                    <ImageView-->
+    <!--                        android:scaleType="fitXY"-->
+    <!--                        android:layout_alignParentTop="true"-->
+    <!--                        android:background="@drawable/collectunit"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="150dp">-->
+
+    <!--                    </ImageView>-->
+    <!--                </RelativeLayout>-->
+    <!--            </androidx.appcompat.widget.LinearLayoutCompat>-->
+    <!--        </LinearLayout>-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_weight="0.50"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent">-->
+    <!--            <androidx.appcompat.widget.LinearLayoutCompat-->
+    <!--                android:orientation="vertical"-->
+    <!--                android:padding="10dp"-->
+    <!--                android:weightSum="1"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content">-->
+
+    <!--                <RelativeLayout-->
+
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="120dp">-->
+    <!--                <Button-->
+    <!--                    android:layout_alignParentBottom="true"-->
+    <!--                    android:layout_alignBottom="@+id/maser"-->
+    <!--                    android:padding="10dp"-->
+    <!--                    android:background="@android:color/holo_blue_bright"-->
+    <!--                    android:textColor="@android:color/white"-->
+    <!--                    android:text="My Service Status"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content">-->
+
+    <!--                </Button>-->
+
+    <!--                    <ImageView-->
+
+    <!--                        android:id="@+id/maser"-->
+    <!--                        android:background="@drawable/myservice"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="90dp"></ImageView>-->
+    <!--                </RelativeLayout>-->
+    <!--                <RelativeLayout-->
+    <!--                    android:layout_marginTop="10dp"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="120dp">-->
+    <!--                <Button-->
+    <!--                    android:layout_alignParentBottom="true"-->
+    <!--                    android:id="@+id/serappbtn"-->
+    <!--                    android:layout_marginTop="10dp"-->
+    <!--                    android:padding="0dp"-->
+    <!--                    android:background="@android:color/holo_blue_bright"-->
+    <!--                    android:textColor="@android:color/white"-->
+    <!--                    android:text="Service Approval"-->
+    <!--                    android:layout_width="match_parent"-->
+    <!--                    android:layout_height="wrap_content">-->
+
+
+    <!--                </Button>-->
+
+    <!--                    <ImageView-->
+
+    <!--                        android:layout_alignBottom="@+id/serappbtn"-->
+    <!--                        android:src="@drawable/serapproval"-->
+    <!--                        android:layout_width="match_parent"-->
+    <!--                        android:layout_height="150dp"></ImageView>-->
+    <!--                </RelativeLayout>-->
+    <!--            </androidx.appcompat.widget.LinearLayoutCompat>-->
+    <!--        </LinearLayout>-->
+    <!--    </LinearLayout>-->

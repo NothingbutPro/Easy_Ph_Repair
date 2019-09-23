@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.ics.easy_ph_repair.ui.Home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_newjob"
+        android:name="com.ics.easy_ph_repair.ui.NewJobFrgment.NewJobFragment"
+        android:label="NewJob"
+        tools:layout="@layout/fragment_newjob" />
+
+    <fragment
+        android:id="@+id/nav_service_app"
+        android:name="com.ics.easy_ph_repair.ui.ServiceApproval.ServiceApprovalFragment"
+        android:label="ServiceApproval"
+        tools:layout="@layout/serviceapproval" />
+
+    <activity
+        android:id="@+id/nav_logout"
+        android:name="com.ics.easy_ph_repair.LoginSign.LoginActivity"
+        android:label="Log Out"
+        tools:layout="@layout/fragment_tools" />
+
+    <fragment
+        android:id="@+id/nav_collecunit"
+        android:name="com.ics.easy_ph_repair.ui.CollectUnit.CollectUnitFragment"
+        android:label="CollectUnit"
+        tools:layout="@layout/collectunit" />
+
+    <fragment
+        android:id="@+id/nav_service"
+        android:name="com.ics.easy_ph_repair.ui.MyServiceFragment.ServiceFragment"
+        android:label="Service"
+        tools:layout="@layout/service" />
+</navigation>
