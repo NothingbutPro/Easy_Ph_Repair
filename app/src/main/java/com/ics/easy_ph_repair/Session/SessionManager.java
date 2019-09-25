@@ -74,7 +74,8 @@ public class SessionManager {
     }
     public void serverEmailLogin(String strCoust) {
 //        editor.putBoolean(IS_LOGIN, true);
-        editor.putString(COUS_KEY, strCoust);
+        editor.putString(WAITER_NAME, strCoust);
+//        editor.putString(COUS_KEY, strCoust);
         editor.commit();
     }
 

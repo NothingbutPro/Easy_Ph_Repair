@@ -45,7 +45,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment implements BaseSliderView.OnSliderClickListener,
         ViewPagerEx.OnPageChangeListener{
-    CardView addnewjb;
+    CardView addnewjb,ser_status,collect_unity;
     SessionManager sessionManager;
     Fragment RemoveHome;
     TextView nameof,numberof;
@@ -121,6 +121,42 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
 
 //
         addnewjb = root.findViewById(R.id.addnewjb);
+        ser_status = root.findViewById(R.id.ser_status);
+        collect_unity = root.findViewById(R.id.collect_unity);
+        collect_unity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent   intent = new Intent("Hey_Clicked");
+                if(!sessionManager.isLoggedIn()) {
+
+                    intent.putExtra("Clicked", "NotLoggedin");
+
+                }else {
+                    intent.putExtra("Clicked", "collect_unity");
+                }
+                // put your all data using put extra
+                DrawintegerList.clear();
+                listName.clear();
+                LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(intent);
+            }
+        });
+        ser_status.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent   intent = new Intent("Hey_Clicked");
+                if(!sessionManager.isLoggedIn()) {
+
+                    intent.putExtra("Clicked", "NotLoggedin");
+
+                }else {
+                    intent.putExtra("Clicked", "Service_Status");
+                }
+                // put your all data using put extra
+                DrawintegerList.clear();
+                listName.clear();
+                LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(intent);
+            }
+        });
         addnewjb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

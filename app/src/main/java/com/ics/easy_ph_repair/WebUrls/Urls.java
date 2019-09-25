@@ -7,5 +7,7 @@ public class Urls {
     public static String Job_card  = "job_card";
     public static String Getjob_cust_id   = "getjob_cust_id";
     public static String Getjobcart   = "getjobcart";
+    public static String Get_delivery_boy_pickup   = "get_delivery_boy_pickup";
+    public static String Delivery_boy_pickup   = "delivery_boy_pickup";
 //    public static String Gob_card   = "job_card";
 }

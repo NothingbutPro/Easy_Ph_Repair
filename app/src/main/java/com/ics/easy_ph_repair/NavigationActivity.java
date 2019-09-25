@@ -46,9 +46,12 @@ public class NavigationActivity extends AppCompatActivity {
                 Toast.makeText(context, "Str is"+str, Toast.LENGTH_SHORT).show();
                 if(str.equals("AddNewJob")) {
                     navController.navigate(R.id.nav_newjob);
-                }else if(str.equals("ServiceApproval"))
+                }else if(str.equals("Service_Status"))
                 {
-
+                    navController.navigate(R.id.nav_service_app);
+                }else if(str.equals("collect_unity"))
+                {
+                    navController.navigate(R.id.nav_collecunit);
                 }else if(str.equals("NotLoggedin")) {
                     Intent intent1 = new Intent(NavigationActivity.this, LoginActivity.class);
                     startActivity(intent1);
