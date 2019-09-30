@@ -180,6 +180,8 @@ public class LoginActivity extends AppCompatActivity {
 //                    final int uSer_id = Log.e("USer id", "" + new SessionManager(LoginActivity.this).getWaiterName());
                     sessionManager.serverEmailLogin(jsonObject.getJSONObject("data").getString("name"),jsonObject.getJSONObject("data").getString("email"),jsonObject.getJSONObject("data").getString("mobile"));
                     startActivity(intent);
+                    NavigationActivity.navController.popBackStack();
+                    NavigationActivity.navController=null;
                     finish();
                     // String cus_code = dt.getString("cust_code");
 //                    store = cus_code.toString();

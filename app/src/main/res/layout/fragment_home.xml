@@ -96,7 +96,7 @@
         android:id="@+id/li1"
         android:padding="15dp"
         android:layout_below="@id/profilecard"
-        android:weightSum="3"
+        android:weightSum="2"
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -154,7 +154,7 @@
 
                     <TextView
                         android:textAlignment="center"
-                        android:text="Service Status"
+                        android:text="My Jobs"
                         android:layout_below="@id/sm2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -163,6 +163,51 @@
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/li3"
+        android:padding="15dp"
+        android:layout_below="@id/li1"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/sercomp"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <RelativeLayout
+                    android:padding="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/sm5"
+                        android:src="@drawable/smalladdicon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"></ImageView>
+
+                    <TextView
+                        android:textAlignment="center"
+                        android:text="Complete Job"
+                        android:layout_below="@id/sm5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </TextView>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/collect_unity"
             android:layout_margin="4dp"
@@ -184,7 +229,7 @@
 
                     <TextView
                         android:textAlignment="center"
-                        android:text="Collect Unit"
+                        android:text="Repairing Mode"
                         android:layout_below="@id/sm4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -194,107 +239,7 @@
             </androidx.cardview.widget.CardView>
         </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
 
-
-    <LinearLayout
-        android:id="@+id/li3"
-        android:padding="15dp"
-        android:layout_below="@id/li1"
-        android:weightSum="3"
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.cardview.widget.CardView
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <RelativeLayout
-                    android:padding="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:id="@+id/sm5"
-                        android:src="@drawable/smalladdicon"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"></ImageView>
-
-                    <TextView
-                        android:textAlignment="center"
-                        android:text="Service Approval"
-                        android:layout_below="@id/sm5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                    </TextView>
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:visibility="invisible"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <RelativeLayout
-                    android:padding="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:id="@+id/sm3"
-                        android:src="@drawable/smalladdicon"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"></ImageView>
-
-                    <TextView
-                        android:text="Create Order"
-                        android:layout_below="@id/sm3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                    </TextView>
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:visibility="invisible"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <RelativeLayout
-                    android:padding="15dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <ImageView
-                        android:id="@+id/sm6"
-                        android:src="@drawable/smalladdicon"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"></ImageView>
-
-                    <TextView
-                        android:text="Create Order"
-                        android:layout_below="@id/sm6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                    </TextView>
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 

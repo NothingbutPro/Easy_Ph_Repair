@@ -60,6 +60,7 @@
                     android:text="Date" />
 
                 <TextView
+                    android:visibility="gone"
                     android:id="@+id/tv_order_time"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -74,6 +75,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:visibility="gone"
                     android:id="@+id/tv_order_price"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -84,44 +86,107 @@
                     android:textColor="@android:color/white"
                     android:padding="5dp"
                     android:background="@android:color/holo_green_dark"
-                    android:id="@+id/tv_order_item"
+                    android:id="@+id/tv_order_pen"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Pending" />
-            </LinearLayout>
+               />
 
+
+            </LinearLayout>
+            <TextView
+
+                android:padding="5dp"
+                android:id="@+id/tv_order_rs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                />
 
             <LinearLayout
-                android:padding="10dp"
+                android:visibility="gone"
+                android:weightSum="1"
+                android:id="@+id/appbtn"
+                android:padding="0dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <Button
+
+                    android:layout_weight="0.50"
                     android:textAllCaps="false"
                     android:layout_margin="3dp"
                     android:background="@android:color/holo_green_light"
                     android:id="@+id/tv_accept_btn"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Charges 100 rs \n Accept" />
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:text="" />
 
 
                 <Button
+
                     android:textColor="@android:color/white"
                     android:textAllCaps="false"
                     android:layout_margin="3dp"
                     android:background="@android:color/holo_red_dark"
                     android:id="@+id/tv_reject"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Reject 100 rs \n Decline" />
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="0.50"
+                    android:text="" />
             </LinearLayout>
         </LinearLayout>
 
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/payli"
+
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioGroup
+                android:id="@+id/allraid"
+                android:weightSum="1"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <RadioButton
+                    android:id="@+id/payon"
+                    android:layout_weight="0.50"
+                    android:text="Online"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </RadioButton>
+                <RadioButton
+                    android:id="@+id/cashpay"
+                    android:text="Cash on delivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                </RadioButton>
+            </RadioGroup>
+
+                <LinearLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <Button
+
+                        android:textColor="@android:color/white"
+                        android:textAllCaps="false"
+                        android:layout_margin="9dp"
+                        android:background="@android:color/holo_blue_bright"
+                        android:id="@+id/tv_btn_pay"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_weight="0.50"
+                        android:text="Pay" />
+
+                </LinearLayout>
+        </LinearLayout>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"

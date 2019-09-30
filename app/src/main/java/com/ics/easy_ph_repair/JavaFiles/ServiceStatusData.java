@@ -68,8 +68,23 @@ public class ServiceStatusData {
     @SerializedName("status")
     @Expose
     private String status;
+    @SerializedName("quotation_amount")
+    @Expose
+    private String quotation_amount;
 
-    public ServiceStatusData(String id, String userId, String jobdate, String jobid, String customerId, String mobile, String firstName, String lastName, String model, String colour, String imeiOne, String imeiTwo, String jobStatus, String invoiceStatus, String serviceType, String warranty, String remarks, String accessories, String estimate, String complant, String status) {
+
+    @SerializedName("quotation_desc")
+    @Expose
+    private String quotation_desc;
+
+
+
+    @SerializedName("check_status")
+    @Expose
+    private String check_status;
+
+    public ServiceStatusData(String id, String userId, String jobdate, String jobid, String customerId, String mobile, String firstName, String lastName, String model, String colour, String imeiOne, String imeiTwo, String jobStatus, String invoiceStatus, String serviceType, String warranty, String remarks, String accessories, String estimate, String complant, String status,String quotation_amount,String quotation_desc
+    ,String check_status) {
         this.id = id;
         this.userId = userId;
         this.jobdate = jobdate;
@@ -91,8 +106,34 @@ public class ServiceStatusData {
         this.estimate = estimate;
         this.complant = complant;
         this.status = status;
+        this.quotation_amount = quotation_amount;
+        this.quotation_desc = quotation_desc;
+        this.check_status = check_status;
     }
 
+    public String getCheck_status() {
+        return check_status;
+    }
+
+    public void setCheck_status(String check_status) {
+        this.check_status = check_status;
+    }
+
+    public String getQuotation_amount() {
+        return quotation_amount;
+    }
+
+    public void setQuotation_amount(String quotation_amount) {
+        this.quotation_amount = quotation_amount;
+    }
+
+    public String getQuotation_desc() {
+        return quotation_desc;
+    }
+
+    public void setQuotation_desc(String quotation_desc) {
+        this.quotation_desc = quotation_desc;
+    }
     public String getId() {
         return id;
     }

@@ -37,11 +37,15 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Iterator;
 import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
+
+import static com.ics.easy_ph_repair.NavigationActivity.navController;
 
 public class NewJobFragment extends Fragment {
     EditText Jobid,Cusid,Mobid,Modelid,Imeiid,Imeid2,Compalinid,Colourid;
@@ -83,27 +87,18 @@ public class NewJobFragment extends Fragment {
         Compalinid = root.findViewById(R.id.comid);
         Colourid = root.findViewById(R.id.colourid);
         new GETJBID().execute();
+        Calendar cal = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat(" dd/MM/yyyy");
+        System.out.println(dateFormat.format(cal.getTime()));
+        jdate.setText(dateFormat.format(cal.getTime()));
+        Log.e("Jobid" , ""+Jobid.getText().toString());
+//        navController.popBackStack();
         jdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // TODO Auto-generated method stub
 
-                DatePickerDialog.OnDateSetListener dpd = new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int monthOfYear,
-                                          int dayOfMonth) {
-
-                        int s=monthOfYear+1;
-                        String a = dayOfMonth+"/"+s+"/"+year;
-                        jdate.setText(""+a);
-                    }
-                };
-
-                Time date = new Time();
-                DatePickerDialog d = new DatePickerDialog(getActivity(), dpd, date.year ,date.month, date.monthDay);
-                d.show();
-
-
+                jdate.setFocusable(true);
             }
         });
         sbmtjobbtn.setOnClickListener(new View.OnClickListener() {
@@ -112,6 +107,7 @@ public class NewJobFragment extends Fragment {
 
                     if(simcid.isChecked())
                     {
+
                         Accessories.add(simcid.getText().toString());
                         howmuchchek =howmuchchek+1;
                     }
@@ -168,7 +164,7 @@ public class NewJobFragment extends Fragment {
 //                    !Mobid.getText().toString().isEmpty() && !Modelid.getText().toString().isEmpty() && !Colourid.getText().toString().isEmpty() &&
 //                     Imeiid.getText().toString().isEmpty()
 //                    && !Imeid2.getText().toString().isEmpty() &&!Compalinid.getText().toString().isEmpty())
-                    if(!bjdate &&!bJobid&&!bCusid&&!Mobidb&&!Modelidb&&!Colouridb&&!Imeiidv&&!Imeid2b&&!Compalinidb)
+                    if(!bjdate &&!bCusid&&!Mobidb&&!Modelidb&&!Colouridb&&!Compalinidb)
                     {
                             if(howmuchchek>0) {
 
@@ -177,17 +173,24 @@ public class NewJobFragment extends Fragment {
 
                                     if(i==0)
                                     {
+                                        Log.e("Assories "+i , ""+Assories);
                                         Assories = Accessories.get(i);
                                     }else {
                                         if(i==howmuchchek-1) {
-                                            Assories = Accessories.get(i);
+                                            Log.e("Assories "+i , ""+Assories);
+                                            Assories = Assories +","+ Accessories.get(i);
                                         }else {
+                                            Log.e("Assories "+i , ""+Assories);
                                             Assories = Assories + "," + Accessories.get(i);
+
                                         }
                                     }
                                 }
-                                new SubMItJob(jdate, Jobid, Cusid, Mobid, Modelid, Colourid, Imeiid, Imeid2, Compalinid).execute();
+
+                                Log.e("jdate" , "id jdate"+ jdate);
+
                             }
+                      new SubMItJob(jdate, Jobid, Cusid, Mobid, Modelid, Colourid, Imeiid, Imeid2, Compalinid,Assories).execute();
                     }else {
                         Toast.makeText(getActivity(), "Fill all fields", Toast.LENGTH_SHORT).show();
                     }
@@ -215,8 +218,9 @@ public class NewJobFragment extends Fragment {
         String imeiid;
         String imeid2;
         String compalinid;
+        String assories;
 
-        public SubMItJob(EditText jdate, EditText jobid, EditText cusid, EditText mobid, EditText modelid, EditText colourid, EditText imeiid, EditText imeid2, EditText compalinid) {
+        public SubMItJob(EditText jdate, EditText jobid, EditText cusid, EditText mobid, EditText modelid, EditText colourid, EditText imeiid, EditText imeid2, EditText compalinid, String assories) {
             this.Jdate = jdate.getText().toString();
             this.jobid = jobid.getText().toString();
             this.cusid = cusid.getText().toString();
@@ -226,6 +230,7 @@ public class NewJobFragment extends Fragment {
             this.imeiid = imeiid.getText().toString();
             this.imeid2 = imeid2.getText().toString();
             this.compalinid = compalinid.getText().toString();
+            this.assories = assories;
 
         }
 
@@ -243,9 +248,9 @@ public class NewJobFragment extends Fragment {
 
                 JSONObject postDataParams = new JSONObject();
                 Log.e("Customer" , "id ios"+ new SessionManager(getActivity()).getCoustId());
+                Log.e("jdate" , "id jdate"+ jdate);
 
-                postDataParams.put("jobdate" , jdate.getText().toString());
-                postDataParams.put("jobid" , jobid);
+                postDataParams.put("jobdate" , Jdate);
                 postDataParams.put("customer_id" , cusid);
                 postDataParams.put("mobile" , mobid);
                 postDataParams.put("model" , modelid);
@@ -254,9 +259,9 @@ public class NewJobFragment extends Fragment {
                 postDataParams.put("service_type" , "Mobile");
                 postDataParams.put("imei_two" , imeid2);
                 postDataParams.put("complant" , compalinid);
-                postDataParams.put("accessories" , Assories);
-                postDataParams.put("user_id" ,  new SessionManager(getActivity()).getCoustId());
-
+                postDataParams.put("accessories" , assories);
+                postDataParams.put("user_id" ,  new SessionManager(getActivity()).getWaiterName());
+                Log.e("assories",""+assories);
                 Log.e("postDataParams", postDataParams.toString());
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setReadTimeout(15000  /*milliseconds*/);
@@ -316,7 +321,7 @@ public class NewJobFragment extends Fragment {
 
                     jsonObject = new JSONObject(result);
                     JSONObject jsonObject1 = jsonObject.getJSONObject("massage");
-                    Boolean Responce = jsonObject.getJSONObject("responce").getBoolean("responce");
+                    Boolean Responce = jsonObject.getBoolean("responce");
                     if(Responce.booleanValue()) {
                         Toast.makeText(getActivity(), "Job Submitted Success", Toast.LENGTH_SHORT).show();
 //                        try {
@@ -397,10 +402,10 @@ public class NewJobFragment extends Fragment {
 
             try {
 
-                URL url = new URL(Urls.Base_Url+""+Urls.Getjob_cust_id);
+                URL url = new URL(Urls.Base_Url+""+Urls.Getjob_cust_id+"/"+new SessionManager(getActivity()).getWaiterName());
 
                 JSONObject postDataParams = new JSONObject();
-
+//                postDataParams.put("user_id" , new SessionManager(getActivity()).getWaiterName());
 
 
 
@@ -464,7 +469,7 @@ public class NewJobFragment extends Fragment {
 
                     jsonObject = new JSONObject(result);
                     JSONObject jsonObject1 = jsonObject.getJSONObject("massage");
-                    Jobid.setText(jsonObject1.getString("job_id"));
+                  //  Jobid.setText(jsonObject1.getString("job_id"));
                     Cusid.setText(jsonObject1.getString("cust_id"));
                     Cusid.setFocusable(false);
                     Jobid.setFocusable(false);
@@ -513,4 +518,5 @@ public class NewJobFragment extends Fragment {
             return result.toString();
         }
     }
+
 }

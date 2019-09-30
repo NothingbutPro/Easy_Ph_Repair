@@ -15,7 +15,7 @@
         <item
             android:id="@+id/nav_service_app"
             android:icon="@drawable/ic_menu_slideshow"
-            android:title="ServiceApproval" />
+            android:title="My Jobs" />
         <item
             android:id="@+id/nav_collecunit"
             android:icon="@drawable/ic_menu_share"

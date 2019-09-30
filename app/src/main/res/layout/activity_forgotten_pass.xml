@@ -77,6 +77,7 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/recpass"
         android:textColor="@android:color/white"
         android:background="@android:color/holo_green_light"
         android:text="Recover Pasword"

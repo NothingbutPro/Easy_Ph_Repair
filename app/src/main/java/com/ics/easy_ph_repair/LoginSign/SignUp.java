@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.ics.easy_ph_repair.NavigationActivity;
 import com.ics.easy_ph_repair.R;
@@ -37,9 +36,11 @@ import java.util.Iterator;
 import javax.net.ssl.HttpsURLConnection;
 
 public class SignUp extends AppCompatActivity {
-    EditText Name,Email,Passedt,Mobet,Town,State,Distric,Conpass;
+    EditText Name,Email,Passedt,Mobet,Town,State,Distric,Conpass,LastName;
     RadioButton ownsp , indsp;
+    RadioGroup myrad;
     SessionManager sessionManager;
+
     Button Sigbtn;
     androidx.appcompat.widget.Toolbar Toolbar;
     String selectedtext;
@@ -49,10 +50,13 @@ public class SignUp extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
 //        Oiradiogroup = findViewById(R.id.oiradiogroup2);
         Name = findViewById(R.id.name);
+        LastName = findViewById(R.id.lname);
+
         Toolbar = findViewById(R.id.toolbar);
         sessionManager = new SessionManager(this);
         Email = findViewById(R.id.email);
         Town = findViewById(R.id.town);
+        myrad = findViewById(R.id.myrad);
         Sigbtn = findViewById(R.id.sigbtn);
         State = findViewById(R.id.state);
         Distric = findViewById(R.id.distric);
@@ -72,8 +76,19 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 selectedtext  = compoundButton.getText().toString();
-                indsp.setChecked(true);
-                ownsp.setChecked(false);
+                myrad.clearCheck();
+//                if(indsp.isChecked()) {
+//                    indsp.setChecked(true);
+//                    ownsp.setChecked(false);
+//                }else {
+//                    if(ownsp.isChecked()) {
+//                        indsp.setChecked(true);
+//                        ownsp.setChecked(false);
+//                    }else {
+//                        indsp.setChecked(true);
+//                       // ownsp.setChecked(false);
+//                    }
+//                }
             }
         });
 
@@ -81,22 +96,55 @@ public class SignUp extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 selectedtext  = compoundButton.getText().toString();
-                ownsp.setChecked(true);
-                indsp.setChecked(false);
+                myrad.clearCheck();
+
+//                if(ownsp.isChecked()) {
+//                    ownsp.setChecked(true);
+//                    indsp.setChecked(false);
+//                }else {
+//                    if(indsp.isChecked()) {
+//                        ownsp.setChecked(true);
+//                        indsp.setChecked(false);
+//                    }else {
+//                        ownsp.setChecked(true);
+//                        //ownsp.setChecked(false);
+//                    }
+////                    ownsp.setChecked(true);
+////                    indsp.setChecked(false);
+//                }
             }
         });
         Sigbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!Name.getText().toString().isEmpty() && !Email.getText().toString().isEmpty() && !Passedt.getText().toString().isEmpty()
-                        && !Mobet.getText().toString().isEmpty() && !(ownsp.isSelected()||indsp.isSelected() &&
+                        && !Mobet.getText().toString().isEmpty() &&
                         !Town.getText().toString().isEmpty() &&
-                        !Distric.getText().toString().isEmpty() && !State.getText().toString().isEmpty())) {
+                        !Distric.getText().toString().isEmpty() && !State.getText().toString().isEmpty()) {
                     if(Conpass.getText().toString().equals(Passedt.getText().toString())) {
 //                    RadioButton r = (RadioButton) Oiradiogroup.getChildAt(Oiradiogroup.getCheckedRadioButtonId());
 //                    String selectedtext = r.getText().toString();
-                        new Registerme(Name.getText().toString(), Email.getText().toString(), Passedt.getText().toString(), Mobet.getText().toString(), selectedtext,Distric.getText().toString()
-                        ,Town.getText().toString() ,State.getText().toString()).execute();
+                        if(Email.getText().toString().contains(".") && Email.getText().toString().contains("com"))
+                        {
+                            if(Mobet.getText().toString().length() == 10) {
+                                Toast.makeText(SignUp.this, "Email and phone is valid", Toast.LENGTH_SHORT).show();
+                                if(!selectedtext.isEmpty()) {
+                                    new Registerme(Name.getText().toString()+" "+LastName.getText().toString(), Email.getText().toString(), Passedt.getText().toString(), Mobet.getText().toString(), selectedtext,Distric.getText().toString()
+                                            ,Town.getText().toString() ,State.getText().toString()).execute();
+                                }else {
+                                    Toast.makeText(SignUp.this, "Please Select Individual or Shop", Toast.LENGTH_SHORT).show();
+
+                                }
+
+                            }else {
+//                                Toast.makeText(SignUp.this, "only em,ail is valid", Toast.LENGTH_SHORT).show();
+                                Mobet.setError("Mobile number should be of 10 digit ");
+                            }
+                        }else {
+                            Email.setError("Email is not valid");
+                            Toast.makeText(SignUp.this, "Please check it again", Toast.LENGTH_SHORT).show();
+                        }
+
                     }else {
                         Toast.makeText(SignUp.this, "Password do not match", Toast.LENGTH_SHORT).show();
                     }
@@ -216,9 +264,10 @@ public class SignUp extends AppCompatActivity {
                     Log.e("Response is", response);
                     String massage = jsonObject.getString("massage");
                     Toast.makeText(SignUp.this, "Successfully registered", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(SignUp.this , OTPActivity.class);
+                    Intent intent = new Intent(SignUp.this , NavigationActivity.class);
 //                    intent.putExtra("number is" , )
                     sessionManager.setLogin(true);
+                    sessionManager.serverEmailLogin(jsonObject.getJSONObject("massage").getString("user_id"));
                     sessionManager.serverEmailLogin(jsonObject.getJSONObject("massage").getString("name"),jsonObject.getJSONObject("massage").getString("email"),jsonObject.getJSONObject("massage").getString("mobile"));
                  //   sessionManager.serverEmailLogin();
 
@@ -234,8 +283,19 @@ public class SignUp extends AppCompatActivity {
 
 
                 } catch (JSONException e) {
-
-                    e.printStackTrace();
+                    try {
+                        if(jsonObject.getString("error").contains("mobile") )
+                        {
+                            Toast.makeText(SignUp.this, "Mobile is already exist", Toast.LENGTH_SHORT).show();
+                        }
+                        if(jsonObject.getString("error").contains("email"))
+                        {
+                            Toast.makeText(SignUp.this, "Email is already exist", Toast.LENGTH_SHORT).show();
+                        }
+                        e.printStackTrace();
+                    } catch (JSONException ex) {
+                        ex.printStackTrace();
+                    }
                 }
 
             }

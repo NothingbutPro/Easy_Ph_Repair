@@ -45,7 +45,7 @@ import java.util.List;
 
 public class HomeFragment extends Fragment implements BaseSliderView.OnSliderClickListener,
         ViewPagerEx.OnPageChangeListener{
-    CardView addnewjb,ser_status,collect_unity;
+    CardView addnewjb,ser_status,collect_unity,sercomp;
     SessionManager sessionManager;
     Fragment RemoveHome;
     TextView nameof,numberof;
@@ -66,6 +66,7 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
         mDemoSlider = root.findViewById(R.id.slider);
         nameof = root.findViewById(R.id.nameof);
         numberof = root.findViewById(R.id.numberof);
+        sercomp = root.findViewById(R.id.sercomp);
 
 
         DrawintegerList.add(R.drawable.mobile_reslide);
@@ -133,6 +134,23 @@ public class HomeFragment extends Fragment implements BaseSliderView.OnSliderCli
 
                 }else {
                     intent.putExtra("Clicked", "collect_unity");
+                }
+                // put your all data using put extra
+                DrawintegerList.clear();
+                listName.clear();
+                LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(intent);
+            }
+        });
+        sercomp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent   intent = new Intent("Hey_Clicked");
+                if(!sessionManager.isLoggedIn()) {
+
+                    intent.putExtra("Clicked", "NotLoggedin");
+
+                }else {
+                    intent.putExtra("Clicked", "Service_Complete");
                 }
                 // put your all data using put extra
                 DrawintegerList.clear();

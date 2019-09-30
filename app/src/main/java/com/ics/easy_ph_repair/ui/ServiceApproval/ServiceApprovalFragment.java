@@ -41,6 +41,8 @@ import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import static com.ics.easy_ph_repair.NavigationActivity.navController;
+
 public class ServiceApprovalFragment extends Fragment {
     public ArrayList<ServiceStatusData> StatusDataArrayList = new ArrayList<>();
     private SlideshowViewModel slideshowViewModel;
@@ -52,7 +54,10 @@ public class ServiceApprovalFragment extends Fragment {
                 ViewModelProviders.of(this).get(SlideshowViewModel.class);
         View root = inflater.inflate(R.layout.serviceapproval, container, false);
         servistatusrecyRecyclerView = root.findViewById(R.id.servistatus);
+
         new GETMyREquest().execute();
+
+//        servistatusrecyRecyclerView.addOnItemTouchListener(new );
         return root;
     }
 
@@ -81,7 +86,8 @@ public class ServiceApprovalFragment extends Fragment {
                 URL url = new URL(Urls.Base_Url+""+Urls.Getjobcart);
 
                 JSONObject postDataParams = new JSONObject();
-                postDataParams.put("user_id",new SessionManager(getActivity()).getCoustId());
+             //   Log.e("user_id is" , ""+new SessionManager(getActivity()).getWaiterName());
+                postDataParams.put("user_id",new SessionManager(getActivity()).getWaiterName());
 
 
                 Log.e("postDataParams", postDataParams.toString());
@@ -157,8 +163,8 @@ public class ServiceApprovalFragment extends Fragment {
                jsonObject1.getString("invoice_status")  ,jsonObject1.getString("service_type")  ,
                jsonObject1.getString("warranty")  ,jsonObject1.getString("remarks")  ,
                jsonObject1.getString("accessories")  ,jsonObject1.getString("estimate")  ,
-               jsonObject1.getString("complant")  ,jsonObject1.getString("status")
-       ));
+               jsonObject1.getString("complant")  ,jsonObject1.getString("status"),
+               jsonObject1.getString("quotation_amount"),jsonObject1.getString("quotation_desc"),jsonObject1.getString("check_status")));
 //                        }
 
                     }
@@ -167,6 +173,7 @@ public class ServiceApprovalFragment extends Fragment {
                     llm.setOrientation(LinearLayoutManager.VERTICAL);
                     servistatusrecyRecyclerView.setLayoutManager(llm);
                     servistatusrecyRecyclerView.setAdapter(serviceStatusAdapter);
+//                    navController.popBackStack(R.id.nav_service_app ,true);
                     //  String response = jsonObject.getString("responce");
                     //   Log.e("Response is", response);
 

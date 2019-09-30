@@ -1,50 +1,338 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:fillViewport="true"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-        <TextView
-            app:layout_constraintBottom_toTopOf="@+id/addmorefloat"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:id="@+id/jsview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></TextView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-
-        android:src="@drawable/ic_add_white_24dp"
-        android:id="@+id/addmorefloat"
-        android:layout_width="wrap_content"
-
-        android:layout_height="wrap_content"
-
-        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/jsview">
-
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
-    <ScrollView
-        android:fillViewport="true"
-
-        app:layout_constraintTop_toBottomOf="@+id/addmorefloat"
-        android:id="@+id/scrollView2"
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_margin="6dp"
+        android:id="@+id/servistatus"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+    </androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>
 
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="0dp">
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<ScrollView-->
+<!--    android:fillViewport="true"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent">-->
+<!--        <TextView-->
+<!--            app:layout_constraintBottom_toTopOf="@+id/addmorefloat"-->
+<!--            app:layout_constraintRight_toRightOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            android:id="@+id/jsview"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"></TextView>-->
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+
+<!--        android:src="@drawable/ic_add_white_24dp"-->
+<!--        android:id="@+id/addmorefloat"-->
+<!--        android:layout_width="wrap_content"-->
+
+<!--        android:layout_height="wrap_content"-->
+
+<!--        app:layout_constraintBottom_toTopOf="@+id/scrollView2"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/jsview">-->
+
+<!--    </com.google.android.material.floatingactionbutton.FloatingActionButton>-->
+<!--    <ScrollView-->
+<!--        android:fillViewport="true"-->
+
+<!--        app:layout_constraintTop_toBottomOf="@+id/addmorefloat"-->
+<!--        android:id="@+id/scrollView2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <LinearLayout-->
+
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            tools:layout_editor_absoluteX="0dp">-->
+
+<!--&lt;!&ndash;            <Button&ndash;&gt;-->
+<!--&lt;!&ndash;                android:id="@+id/collecbtn"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:layout_margin="18dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:background="@color/design_default_color_primary"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:text="Submit Collector Information"&ndash;&gt;-->
+<!--&lt;!&ndash;                android:textColor="@android:color/white"></Button>&ndash;&gt;-->
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:padding="15dp"-->
+<!--          >-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/jobidin"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Job ID ">-->
+
+
+<!--                </EditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="0dp"-->
+<!--                android:padding="15dp">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/service_Report"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Service Report">-->
+
+
+<!--                </EditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:padding="15dp">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/collected_by"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Collected Boy">-->
+
+
+<!--                </EditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:padding="15dp">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/sC_Received"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="SC Received">-->
+
+
+<!--                </EditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:padding="15dp">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/estimate_Approved"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Estimate Approved">-->
+
+
+<!--                </EditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:padding="15dp">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/dead_Chance_Approved"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Dead Chance Approved">-->
+
+
+<!--                </EditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:padding="15dp">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/Serviced_By"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="Serviced By">-->
+
+
+<!--                </EditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:padding="15dp"-->
+<!--                android:visibility="gone">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/sC_Delivered"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:hint="SC Delivered">-->
+
+
+<!--                </EditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:padding="15dp">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/boy_Collected_On"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:editable="false"-->
+<!--                    android:focusable="false"-->
+<!--                    android:hint="Boy Collected On">-->
+
+
+<!--                </EditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:padding="15dp">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/sc_Received_On"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:editable="false"-->
+<!--                    android:focusable="false"-->
+<!--                    android:hint="Sc Received On">-->
+
+
+<!--                </EditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:padding="15dp">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/estimate_App_on"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:editable="false"-->
+<!--                    android:focusable="false"-->
+<!--                    android:hint="Estimate App On">-->
+
+
+<!--                </EditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:padding="15dp">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/dead_Chance_App_On"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:editable="false"-->
+<!--                    android:focusable="false"-->
+<!--                    android:hint="Dead Chance App On">-->
+
+
+<!--                </EditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:padding="15dp"-->
+<!--                android:visibility="gone">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/service_Finish_On"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:editable="false"-->
+<!--                    android:focusable="false"-->
+<!--                    android:hint="Service Finish On">-->
+
+
+<!--                </EditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:padding="15dp"-->
+<!--                android:visibility="gone">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/service_Delivered_On"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:editable="false"-->
+<!--                    android:focusable="false"-->
+<!--                    android:hint="Service Delivered On">-->
+
+
+<!--                </EditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:padding="15dp"-->
+<!--                android:visibility="gone">-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/boy_Delivered_On"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:editable="false"-->
+<!--                    android:focusable="false"-->
+<!--                    android:hint="Boy Delivered On">-->
+
+
+<!--                </EditText>-->
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
 
 <!--            <Button-->
 <!--                android:id="@+id/collecbtn"-->
@@ -54,291 +342,20 @@
 <!--                android:background="@color/design_default_color_primary"-->
 <!--                android:text="Submit Collector Information"-->
 <!--                android:textColor="@android:color/white"></Button>-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="15dp"
-          >
-
-                <EditText
-                    android:id="@+id/jobidin"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Job ID ">
-
-
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
-                android:padding="15dp">
-
-                <EditText
-                    android:id="@+id/service_Report"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Service Report">
-
-
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="15dp">
-
-                <EditText
-                    android:id="@+id/collected_by"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Collected Boy">
-
-
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="15dp">
-
-                <EditText
-                    android:id="@+id/sC_Received"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="SC Received">
-
-
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="15dp">
-
-                <EditText
-                    android:id="@+id/estimate_Approved"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Estimate Approved">
-
-
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="15dp">
-
-                <EditText
-                    android:id="@+id/dead_Chance_Approved"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Dead Chance Approved">
-
-
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="15dp">
-
-                <EditText
-                    android:id="@+id/Serviced_By"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Serviced By">
-
-
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="15dp"
-                android:visibility="gone">
-
-                <EditText
-                    android:id="@+id/sC_Delivered"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="SC Delivered">
-
-
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="15dp">
-
-                <EditText
-                    android:id="@+id/boy_Collected_On"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:hint="Boy Collected On">
-
-
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="15dp">
-
-                <EditText
-                    android:id="@+id/sc_Received_On"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:hint="Sc Received On">
-
-
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="15dp">
-
-                <EditText
-                    android:id="@+id/estimate_App_on"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:hint="Estimate App On">
-
-
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="15dp">
-
-                <EditText
-                    android:id="@+id/dead_Chance_App_On"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:hint="Dead Chance App On">
-
-
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="15dp"
-                android:visibility="gone">
-
-                <EditText
-                    android:id="@+id/service_Finish_On"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:hint="Service Finish On">
-
-
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="15dp"
-                android:visibility="gone">
-
-                <EditText
-                    android:id="@+id/service_Delivered_On"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:hint="Service Delivered On">
-
-
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:padding="15dp"
-                android:visibility="gone">
-
-                <EditText
-                    android:id="@+id/boy_Delivered_On"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:editable="false"
-                    android:focusable="false"
-                    android:hint="Boy Delivered On">
-
-
-                </EditText>
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-            <Button
-                android:id="@+id/collecbtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="18dp"
-                android:background="@color/design_default_color_primary"
-                android:text="Submit Collector Information"
-                android:textColor="@android:color/white"></Button>
-        </LinearLayout>
-    </ScrollView>
-    <LinearLayout
-        android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/get_delivery_pickup_rec"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-       >
-
-    </androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+<!--        </LinearLayout>-->
+<!--    </ScrollView>-->
+<!--    <LinearLayout-->
+<!--        android:visibility="gone"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/scrollView2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/get_delivery_pickup_rec"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--       >-->
+
+<!--    </androidx.recyclerview.widget.RecyclerView>-->
+<!--    </LinearLayout>-->
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
+<!--</ScrollView>-->
