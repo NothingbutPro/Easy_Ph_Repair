@@ -52,6 +52,7 @@ public class NewJobFragment extends Fragment {
     private GalleryViewModel galleryViewModel;
     public CheckBox simcid,memchid,fanid,battchid,bkchr,charid,headchid,usbcabid;
   public List<String> Accessories = new ArrayList<>();
+  SessionManager sessionManager;
  //   String Accessories;
     int howmuchchek;
     public EditText jdate;
@@ -65,6 +66,8 @@ public class NewJobFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_newjob, container, false);
         sbmtjobbtn = root.findViewById(R.id.sbmtjobbtn);
         //check boxes++++++++++++
+        sessionManager = new SessionManager(getActivity());
+
         simcid = root.findViewById(R.id.simcid);
         memchid = root.findViewById(R.id.memchid);
         fanid = root.findViewById(R.id.fanid);
@@ -92,6 +95,7 @@ public class NewJobFragment extends Fragment {
         System.out.println(dateFormat.format(cal.getTime()));
         jdate.setText(dateFormat.format(cal.getTime()));
         Log.e("Jobid" , ""+Jobid.getText().toString());
+        Mobid.setText(sessionManager.getMobile());
 //        navController.popBackStack();
         jdate.setOnClickListener(new View.OnClickListener() {
             @Override
