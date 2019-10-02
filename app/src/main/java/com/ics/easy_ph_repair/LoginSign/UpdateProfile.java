@@ -24,7 +24,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ics.easy_ph_repair.NavigationActivity;
+import com.ics.easy_ph_repair.Basic.NavigationActivity;
 import com.ics.easy_ph_repair.R;
 import com.ics.easy_ph_repair.Session.SessionManager;
 import com.ics.easy_ph_repair.Utilssss.CameraUtils__TRD;
@@ -90,7 +90,7 @@ public class UpdateProfile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_otp);
+        setContentView(R.layout.updatepros);
         sessionManager = new SessionManager(this);
         proimg = findViewById(R.id.proimg);
         Name = findViewById(R.id.name);

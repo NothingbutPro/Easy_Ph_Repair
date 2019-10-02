@@ -1,14 +1,9 @@
 package com.ics.easy_ph_repair.Adapters;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.AsyncTask;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,27 +18,10 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ics.easy_ph_repair.JavaFiles.ServiceStatusData;
-import com.ics.easy_ph_repair.Phonedetails;
+import com.ics.easy_ph_repair.Basic.Phonedetails;
 import com.ics.easy_ph_repair.R;
-import com.ics.easy_ph_repair.Session.SessionManager;
-import com.ics.easy_ph_repair.WebUrls.Urls;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.util.Iterator;
 import java.util.List;
-
-import javax.net.ssl.HttpsURLConnection;
 
 public class ReparingStuffAdapter extends RecyclerView.Adapter<ReparingStuffAdapter.MyViewHolder> {
     public static String JobId;

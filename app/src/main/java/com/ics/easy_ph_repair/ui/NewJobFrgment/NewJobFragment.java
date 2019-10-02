@@ -1,18 +1,15 @@
 package com.ics.easy_ph_repair.ui.NewJobFrgment;
 
-import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.format.Time;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -20,8 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.ics.easy_ph_repair.LoginSign.LoginActivity;
-import com.ics.easy_ph_repair.NavigationActivity;
+import com.ics.easy_ph_repair.Basic.NavigationActivity;
 import com.ics.easy_ph_repair.R;
 import com.ics.easy_ph_repair.Session.SessionManager;
 import com.ics.easy_ph_repair.WebUrls.Urls;
@@ -44,8 +40,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
-
-import static com.ics.easy_ph_repair.NavigationActivity.navController;
 
 public class NewJobFragment extends Fragment {
     EditText Jobid,Cusid,Mobid,Modelid,Imeiid,Imeid2,Compalinid,Colourid;

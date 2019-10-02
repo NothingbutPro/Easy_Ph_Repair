@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ics.easy_ph_repair.NavigationActivity;
+import com.ics.easy_ph_repair.Basic.NavigationActivity;
 import com.ics.easy_ph_repair.R;
 import com.ics.easy_ph_repair.Session.SessionManager;
 import com.ics.easy_ph_repair.WebUrls.Urls;

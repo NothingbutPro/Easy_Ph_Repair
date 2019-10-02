@@ -3,6 +3,8 @@ package com.ics.easy_ph_repair.WebUrls;
 public class Urls {
     public static String Base_Url = "http://ihisaab.in/jobcart/api/";
     public static String Ragistration = "Ragistration";
+    public static String Otp_send = "otp_send";
+    public static String Otp_match = "otp_match";
     public static String Login = "login";
     public static String Userdata = "userdata";
     public static String User_update = "user_update";

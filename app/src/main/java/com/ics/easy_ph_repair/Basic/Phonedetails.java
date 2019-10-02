@@ -1,9 +1,11 @@
-package com.ics.easy_ph_repair;
+package com.ics.easy_ph_repair.Basic;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.TextView;
+
+import com.ics.easy_ph_repair.R;
 
 public class Phonedetails extends AppCompatActivity {
     TextView cstxt,mobtid,jbidtxt,fnametxt,modetxt,colotxt,imeitxt,imei2txt,comtxt,quotation,jbdate,accessories;

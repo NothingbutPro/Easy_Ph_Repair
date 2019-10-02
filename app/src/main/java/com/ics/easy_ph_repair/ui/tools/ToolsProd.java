@@ -1,10 +1,7 @@
 package com.ics.easy_ph_repair.ui.tools;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,38 +10,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.ics.easy_ph_repair.LoginSign.ForgottenPass;
-import com.ics.easy_ph_repair.LoginSign.LoginActivity;
 import com.ics.easy_ph_repair.LoginSign.SignUp;
-import com.ics.easy_ph_repair.NavigationActivity;
+import com.ics.easy_ph_repair.Basic.NavigationActivity;
 import com.ics.easy_ph_repair.R;
 import com.ics.easy_ph_repair.Session.SessionManager;
-import com.ics.easy_ph_repair.WebUrls.Urls;
-
-import org.apache.http.entity.mime.HttpMultipartMode;
-import org.apache.http.entity.mime.MultipartEntity;
-import org.apache.http.entity.mime.content.FileBody;
-import org.apache.http.entity.mime.content.StringBody;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.util.Iterator;
-
-import javax.net.ssl.HttpsURLConnection;
 
 public class ToolsProd extends Fragment {
 
@@ -72,7 +46,7 @@ public class ToolsProd extends Fragment {
                 if(!emailet.getText().toString().isEmpty() && !passedt.getText().toString().isEmpty()) {
                  //   new LogMEIn(emailet.getText().toString() ,passedt.getText().toString() ).execute();
                 }else {
-                    Toast.makeText(getActivity(), "Logging you in", Toast.LENGTH_SHORT).show();
+
                     Toast.makeText(getActivity(), "Please fill all fields ", Toast.LENGTH_LONG).show();
                 }
 //                Intent intent = new Intent(view.getContext() , NavigationActivity.class);

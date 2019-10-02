@@ -1,10 +1,8 @@
 package com.ics.easy_ph_repair.Adapters;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
@@ -23,12 +21,11 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ics.easy_ph_repair.JavaFiles.ServiceStatusData;
-import com.ics.easy_ph_repair.Phonedetails;
+import com.ics.easy_ph_repair.Basic.Phonedetails;
 import com.ics.easy_ph_repair.R;
 import com.ics.easy_ph_repair.Session.SessionManager;
 import com.ics.easy_ph_repair.WebUrls.Urls;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 

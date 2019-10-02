@@ -20,17 +20,14 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 
 import com.ics.easy_ph_repair.JavaFiles.ServiceStatusData;
-import com.ics.easy_ph_repair.Phonedetails;
+import com.ics.easy_ph_repair.Basic.Phonedetails;
 import com.ics.easy_ph_repair.R;
 import com.ics.easy_ph_repair.Session.SessionManager;
 import com.ics.easy_ph_repair.WebUrls.Urls;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -129,6 +126,13 @@ public class ServiceStatusAdapter extends RecyclerView.Adapter<ServiceStatusAdap
             holder.tv_order_rs.setText("Payment of Repairing will be "+my_locatio_model.getQuotation_amount() +" rs");
             holder.tv_order_pen.setBackgroundColor(Color.GREEN);
             holder.payli.setVisibility(View.VISIBLE);
+
+        }else if (my_locatio_model.getCheck_status().equals("Paid"))
+        {
+            holder.tv_order_pen.setText(my_locatio_model.getCheck_status()+"ed");
+            holder.tv_order_rs.setText("Paid Amount "+my_locatio_model.getQuotation_amount() +" rs");
+            holder.tv_order_pen.setBackgroundColor(Color.GREEN);
+//            holder.payli.setVisibility(View.VISIBLE);
 
         }
         holder.payon.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {

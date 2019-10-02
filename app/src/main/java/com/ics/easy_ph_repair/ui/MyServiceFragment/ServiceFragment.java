@@ -7,23 +7,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ics.easy_ph_repair.Adapters.ReparingStuffAdapter;
 import com.ics.easy_ph_repair.Adapters.ServiceComplAdadpter;
 import com.ics.easy_ph_repair.JavaFiles.ServiceStatusData;
 import com.ics.easy_ph_repair.R;
 import com.ics.easy_ph_repair.Session.SessionManager;
 import com.ics.easy_ph_repair.WebUrls.Urls;
-import com.ics.easy_ph_repair.ui.CollectUnit.CollectUnitFragment;
 import com.ics.easy_ph_repair.ui.ServiceApproval.SlideshowViewModel;
 
 import org.json.JSONArray;
@@ -42,8 +36,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import javax.net.ssl.HttpsURLConnection;
-
-import static com.ics.easy_ph_repair.NavigationActivity.navController;
 
 public class ServiceFragment extends Fragment {
 

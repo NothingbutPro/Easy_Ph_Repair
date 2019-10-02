@@ -7,12 +7,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,11 +34,8 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import javax.net.ssl.HttpsURLConnection;
-
-import static com.ics.easy_ph_repair.NavigationActivity.navController;
 
 public class ServiceApprovalFragment extends Fragment {
     public ArrayList<ServiceStatusData> StatusDataArrayList = new ArrayList<>();

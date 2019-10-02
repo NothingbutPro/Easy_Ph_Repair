@@ -4,28 +4,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    android:background="@drawable/mobile_reslide"
     android:gravity="bottom"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark">
-
+    >
+<com.google.android.material.circularreveal.CircularRevealLinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
     <ImageView
-        android:layout_marginTop="20dp"
         android:id="@+id/imageView"
         android:layout_width="80dp"
+
         android:layout_height="80dp"
         android:contentDescription="@string/nav_header_desc"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         app:srcCompat="@drawable/boyprofile" />
+</com.google.android.material.circularreveal.CircularRevealLinearLayout>
 
     <TextView
 
-        android:textColor="@android:color/black"
-        android:textStyle="bold"
         android:id="@+id/nav_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,10 +34,7 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
-        android:layout_gravity="bottom"
-        android:gravity="bottom"
-        android:textColor="@android:color/black"
-            android:textStyle="bold"
+        android:textStyle="bold"
         android:id="@+id/nav_emai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

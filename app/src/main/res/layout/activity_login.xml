@@ -5,29 +5,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/design_default_color_primary"
+
     >
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_gravity="center"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/design_default_color_primary"
+
     tools:context=".LoginSign.LoginActivity">
 
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
-        android:background="@color/design_default_color_primary"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent">
     <TextView
         android:textAlignment="center"
         android:textSize="20dp"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:text="Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -38,7 +35,7 @@
 
     <LinearLayout
         android:padding="15dp"
-        android:background="@drawable/roundback"
+
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
         android:id="@+id/fisli"
@@ -98,50 +95,63 @@
 
 
 
-            <LinearLayout
-                android:layout_marginTop="10dp"
-                android:layout_gravity="right"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:background="@android:color/white"
-                    android:padding="10dp"
-                    android:gravity="right"
-                    android:layout_gravity="right"
-                    android:id="@+id/forpsss"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="Fogotten Password?"></TextView>
-            </LinearLayout>
-
     </LinearLayout>
-
+    <LinearLayout
+        android:id="@+id/bothbtn"
+        android:padding="10dp"
+        android:weightSum="1"
+        app:layout_constraintTop_toBottomOf="@+id/fisli"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <Button
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
+        android:layout_margin="4dp"
+        android:layout_weight="0.50"
         android:id="@+id/logbtn"
         android:background="@android:color/holo_orange_dark"
         android:text="Log In"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/fisli">
+>
 
     </Button>
 
 
     <Button
-        android:layout_marginRight="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_margin="4dp"
+        android:layout_weight="0.50"
         android:id="@+id/signup"
         android:background="@android:color/holo_blue_bright"
         android:text="Sign Up"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/logbtn">
+        >
 
     </Button>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bothbtn">
+
+        <TextView
+
+            android:id="@+id/forpsss"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:gravity="center_horizontal"
+            android:hint="Fogotten Password?"
+            android:padding="10dp">
+
+        </TextView>
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

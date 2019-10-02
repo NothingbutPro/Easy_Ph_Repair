@@ -1,26 +1,19 @@
-package com.ics.easy_ph_repair;
+package com.ics.easy_ph_repair.Basic;
 
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.DataSource;
-import com.bumptech.glide.load.engine.GlideException;
-import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
-import com.bumptech.glide.request.target.Target;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import android.util.Log;
-import android.view.Gravity;
-import android.view.MenuItem;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -35,9 +28,9 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.navigation.NavigationView;
 import com.ics.easy_ph_repair.LoginSign.LoginActivity;
 import com.ics.easy_ph_repair.LoginSign.UpdateProfile;
+import com.ics.easy_ph_repair.R;
 import com.ics.easy_ph_repair.Session.SessionManager;
 import com.ics.easy_ph_repair.WebUrls.Urls;
-import com.ics.easy_ph_repair.ui.CollectUnit.CollectUnitFragment;
 
 import androidx.drawerlayout.widget.DrawerLayout;
 
@@ -69,13 +62,14 @@ public class NavigationActivity extends AppCompatActivity {
      public AppBarConfiguration mAppBarConfiguration;
    public  static NavController navController;
     View hView;
+    TextView nav_user, nav_email;
     ImageView imageView;
     public BroadcastReceiver receiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
             if (intent != null) {
                 String str = intent.getStringExtra("Clicked");
-                Toast.makeText(context, "Str is"+str, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context, "Str is"+str, Toast.LENGTH_SHORT).show();
                 if(str.equals("AddNewJob")) {
 
 
@@ -113,8 +107,8 @@ public class NavigationActivity extends AppCompatActivity {
 
                     Intent intent1 = new Intent(NavigationActivity.this, LoginActivity.class);
                     startActivity(intent1);
-//                    navController.popBackStack();
-                //    finish();
+                    navController.popBackStack();
+                    finish();
                 }
               //  Toast.makeText(context, "NAv stsart"+navController.getGraph().getParent()., Toast.LENGTH_SHORT).show();
                 // get all your data from intent and do what you want
@@ -145,9 +139,16 @@ public class NavigationActivity extends AppCompatActivity {
         NavigationView navigationView = findViewById(R.id.nav_view);
      //   NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
          hView =  navigationView.getHeaderView(0);
-        TextView nav_user = (TextView)hView.findViewById(R.id.nav_name);
+         nav_user = (TextView)hView.findViewById(R.id.nav_name);
          imageView = (ImageView)hView.findViewById(R.id.imageView);
 //        Glide.get(this).getRequestManagerRetriever().get(this.getBaseContext()).
+         nav_email= (TextView)hView.findViewById(R.id.nav_emai);
+        nav_user.setText(new SessionManager(this).getUsername());
+        nav_email.setText(new SessionManager(this).getCoustId());
+        Log.e("your info is",""+nav_user.getText().toString()+"email"+nav_email.getText().toString());
+//        Toast.makeText(this, "Your name is"+nav_user.getText().toString()+"email"+nav_email.getText().toString(), Toast.LENGTH_SHORT).show();
+        // Passing each menu ID as a set of Ids because each
+        // menu should be considered as top level destinations.
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -155,11 +156,6 @@ public class NavigationActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        TextView nav_email= (TextView)hView.findViewById(R.id.nav_emai);
-        nav_user.setText(new SessionManager(this).getCoustId());
-        nav_email.setText(new SessionManager(this).getUsername());
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_newjob, R.id.nav_service_app,
                 R.id.nav_logout, R.id.nav_collecunit, R.id.nav_service)
@@ -196,7 +192,7 @@ public class NavigationActivity extends AppCompatActivity {
 
     @Override
     public boolean onSupportNavigateUp() {
-        Toast.makeText(this, "on support called", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(this, "on support called", Toast.LENGTH_SHORT).show();
          navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
@@ -304,6 +300,8 @@ public class NavigationActivity extends AppCompatActivity {
                             .applyDefaultRequestOptions(RequestOptions.errorOf(R.drawable.boyprofile))
                             .load("http://ihisaab.in/jobcart/uploads/user/"+jsonObject.get("profile_image"))
                             .into(imageView);
+//                    nav_user.setText(jsonObject.getString("name"));
+//                    nav_email.setText(jsonObject.getString("email"));
 //                    Glide.with(NavigationActivity.this).load("http://ihisaab.in/jobcart/uploads/user/"+jsonObject.get("profile_image")).listener(new RequestListener<Drawable>() {
 //                        @Override
 //                        public boolean onLoadFailed(GlideException e, Object model, Target<Drawable> target, boolean isFirstResource) {

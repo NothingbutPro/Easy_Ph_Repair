@@ -169,6 +169,7 @@
 
 
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/li3"
         android:padding="15dp"
         android:layout_below="@id/li1"
